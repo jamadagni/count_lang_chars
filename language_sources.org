@@ -24,6 +24,8 @@ git clone https://github.com/documentcloud/backbone.git
 
 dojo-release-1.9.0-src
 
+node.js
+
 * Python
 /usr/lib/python3.2/
 

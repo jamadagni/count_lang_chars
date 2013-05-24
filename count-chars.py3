@@ -8,6 +8,15 @@
 # author: Xah Lee http://xahlee.org/
 # created date: 2013-05-23
 
+# TODO
+# • need to add ruby, bash, C++
+# • need to add more Java, perl, python, php
+# • all file are read in as utf-8. If error, skip. Seems too much trouble to find out file encoding first.
+# • The result needs to be normalized. For example, if there's a lot C code, C's use of punct chars will screw the stat.
+# • find a  normalization scheme. Maybe based on total num of lines of code, or total file size, or total use of all punc chars. Also, might consider language popularity. For example, C is heavily used, but not tcl. So, when doing normalization, C should have a bigger room.
+# • pretty print, in a somewhat matrix format as a report
+# • print out to html table.
+
 import os
 import sys
 import shutil
