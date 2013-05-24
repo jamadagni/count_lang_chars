@@ -1,0 +1,14 @@
+-*- coding: utf-8 -*-
+
+2013-05-23
+
+Find the punctuation characters distribution used among computer languages.
+
+This is for designing a optimal keyboard layout for placing symbols.
+
+see
+〈ErgoEmacs Keyboard〉
+http://xahlee.info/comp/ultimate_keyboard_layout.html
+
+The primary program is this
+count-chars.py3

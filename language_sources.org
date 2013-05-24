@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+# 2013-05-23
+
+Some idea of language source code.
+
+* C
+• emacs.
+git clone https://github.com/torvalds/linux.git
+git clone https://github.com/git/git.git
+
+* Java
+
+svn checkout http://google-web-toolkit.googlecode.com/svn/trunk/ google-web-toolkit-read-only
+
+* JavaScript
+
+git clone https://github.com/angular/angular.js.git
+
+git clone https://github.com/yui/yui3.git
+git clone https://github.com/sstephenson/prototype.git
+wget http://code.jquery.com/jquery-1.9.1.js
+
+git clone https://github.com/documentcloud/backbone.git
+
+dojo-release-1.9.0-src
+
+* Python
+/usr/lib/python3.2/
+
+DJango
+
+* Perl
+     "/usr/lib/perl5",
+     "/usr/lib/perl/5.14",
+     "/usr/share/perl5",
+     "/usr/share/perl/5.14",
+
+* PHP
+
+http://symfony.com/
