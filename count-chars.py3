@@ -34,15 +34,34 @@ file_list = [
 
 # list of dirs to process. All files in these dir will be counted.
 input_dirs = [
+
+    # python
+    "/usr/lib/python3.2/",
+
+    # perl
+    "/usr/lib/perl5",
+    "/usr/lib/perl/5.14",
+    "/usr/share/perl5",
+    "/usr/share/perl/5.14",
+
+# JavaScript
+    "/home/xah/Downloads/lang-source-code/angular.js",
+    "/home/xah/Downloads/lang-source-code/backbone",
+    "/home/xah/Downloads/lang-source-code/dojo-release-1.9.0-src",
+    "/home/xah/Downloads/lang-source-code/jquery-1.9.1.js",
+    "/home/xah/Downloads/lang-source-code/prototype",
+    "/home/xah/Downloads/lang-source-code/yui3",
+
+# C
+    "/home/xah/Downloads/lang-source-code/git",
+#    "/home/xah/Downloads/lang-source-code/linux",
     "/home/xah/bin/emacs-24.3/src/",
-     "/usr/lib/python3.2/",
-     "/usr/lib/perl5",
-     "/usr/lib/perl/5.14",
-     "/usr/share/perl5",
-     "/usr/share/perl/5.14",
-    "/home/xah/Downloads/lang-source-code/"
-#
-#"/home/xah/Downloads/lang-source-code/Symfony/"
+
+# Java
+    "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only",
+
+# PHP
+    "/home/xah/Downloads/lang-source-code/Symfony",
 
 ]
 
