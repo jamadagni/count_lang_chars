@@ -15,68 +15,63 @@
 # • pretty print, in a somewhat matrix format as a report
 # • print out to html table.
 
-import os
-import sys
-import shutil
-import datetime
-import operator
-import re
-
-#print(sys.path)
+
+# config
 
 # if this list is not empty, then only these files will be processed.
 # for quick testing purposes.
 file_list = [
-#r"/home/xah/git/count_lang_chars/countCharStat.py3"
+
 ]
 
 # list of dirs to process. All files in these dir will be counted.
 input_dirs = [
 
-#     # python
-     "/usr/lib/python3.2/",
-#     "/home/xah/Downloads/lang-source-code/django/",
+      # python
+    "/usr/lib/python3.2/",
+    "/home/xah/Downloads/lang-source-code/django/",
 
-#     # perl
-      "/usr/lib/perl5",
-#      "/usr/lib/perl/5.14",
-#      "/usr/share/perl5",
-#      "/usr/share/perl/5.14",
+      # perl
+     "/usr/lib/perl5",
+     "/usr/lib/perl/5.14",
+     "/usr/share/perl5",
+     "/usr/share/perl/5.14",
 
-#     # ruby
-     "/usr/lib/ruby/1.9.1/",
-#     "/home/xah/Downloads/lang-source-code/rails",
+    # #  # ruby
+      "/usr/lib/ruby/1.9.1/",
+      "/home/xah/Downloads/lang-source-code/rails",
 
-#     # JavaScript
-#      "/home/xah/Downloads/lang-source-code/angular.js",
-#     "/home/xah/Downloads/lang-source-code/backbone",
-#     "/home/xah/Downloads/lang-source-code/dijit/",
-#     "/home/xah/Downloads/lang-source-code/dojo/",
-#     "/home/xah/Downloads/lang-source-code/jquery-1.9.1.js",
-#     "/home/xah/Downloads/lang-source-code/prototype",
-# #    "/home/xah/Downloads/lang-source-code/yui3",
+      # JavaScript
+#      "/home/xah/Downloads/lang-source-code/yui3", # lang: javascript, total:8,821,561 ;  lang: css, total:104,421; lang: php, total:1,846 ;
+    "/home/xah/Downloads/lang-source-code/angular.js", # javascript, total:842,260
+      "/home/xah/Downloads/lang-source-code/dojo/", # lang: javascript, total:534,967
+      "/home/xah/Downloads/lang-source-code/dijit/", # lang: javascript, total:219,828
+      "/home/xah/Downloads/lang-source-code/prototype", # lang: javascript, total:129,838
+      "/home/xah/Downloads/lang-source-code/backbone", # lang: javascript, total:95,989
+    "/home/xah/Downloads/lang-source-code/jquery-1.9.1/", # lang: javascript, total:39,089
 
-#     # C
-#     "/home/xah/Downloads/lang-source-code/git",
-#     "/home/xah/Downloads/lang-source-code/node",
-#     # "/home/xah/Downloads/lang-source-code/linux",
-#     "/home/xah/bin/emacs-24.3/src/",
+       # C
+#     "/home/xah/Downloads/lang-source-code/linux", # lang: c, total:72,987,569; lang: python, total:23,045; lang: c++, total:7,892; lang: perl, total:99,459; lang: bash, total:18,060
 
-#     # Java
-#      "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only",
+      "/home/xah/Downloads/lang-source-code/node", # lang: c, total:3,124,259; lang: python, total:405,890; lang: javascript, total:2,121,674; lang: c++, total:5,209,059; lang: perl, total:491,182; lang: bash, total:24,445; lang: ruby, total:380; lang: css, total:5,060
 
-#     # PHP
-#      "/home/xah/Downloads/lang-source-code/Symfony",
+#      "/home/xah/bin/emacs-24.3/src/", # lang: c, total:1,339,141
 
-#     # bash
-#     "/home/xah/Downloads/lang-source-code/linux-shell-scripts/"
+      "/home/xah/Downloads/lang-source-code/git", # lang: c, total:822,437; lang: python, total:24,988; lang: javascript, total:8,340; lang: perl, total:216,493; lang: bash, total:559,899; lang: php, total:1,158; lang: css, total:2,307
+
+       # Java
+      "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only", # lang: java, total:4,106,030; lang: c, total:4,990; lang: python, total:36,669; lang: javascript, total:18,185; lang: c++, total:14,472; lang: bash, total:1,347; lang: css, total:43,472
+
+       # PHP
+      "/home/xah/Downloads/lang-source-code/Symfony", # lang: php, total:1,845,508; lang: c, total:6,069; lang: bash, total:755; lang: css, total:4,352
+
+       # bash
+      "/home/xah/Downloads/lang-source-code/linux-shell-scripts/"
 
 ]
 
-#######################################
-
 # only files with these extensions are counted
-langExtMap = {
+langSuffixMap = {
 ".py": "python",
 ".pl": "perl",
 ".pm": "perl",
@@ -96,13 +91,24 @@ langExtMap = {
 #".xml": "xml",
 }
 
-langExtList = langExtMap.keys()
+
+import os
+import sys
+import shutil
+import datetime
+import operator
+import re
+
+
+
+langExtList = langSuffixMap.keys()
 
 # structure is: {'python': {}, 'c': {}, 'java': {}, 'perl': {}, …}
 # in each hash, key is a char, value is count
 charData = {}
+
 # init charData
-for lExt,lName in langExtMap.items():
+for lExt,lName in langSuffixMap.items():
     charData[lName] = {
         "(":0,
         ")":0,
@@ -138,14 +144,15 @@ for lExt,lName in langExtMap.items():
         "&":0,
     }
 
+# key is a char, value is count
+charDataCombined = {}
+
 # structure is: {'python': ‹total char count›, 'c': ‹total char count›, …}
 charTotalData = {}
-# charTotalData
-for lExt,lName in langExtMap.items():
-    charTotalData[lName] = 0
 
-# list of tuples. Each tuples is (lange name, count). Sorted by count. Highest count first.
-sortedTotalCharList = []
+# init charTotalData
+for lExt,lName in langSuffixMap.items():
+    charTotalData[lName] = 0
 
 # sum of all chars counts in all langs
 charSumTotal = 0
@@ -170,12 +177,12 @@ def countThisFile(fpath):
 
     global totalFileCount
     totalFileCount += 1
-    langName = langExtMap[(os.path.splitext(fpath))[1]]
+    langName = langSuffixMap[(os.path.splitext(fpath))[1]]
     for thisChar in fileContent:
         if thisChar in charData[langName]:
             charData[langName][thisChar] += 1
 
-# langName is a string in langExtMap
+# langName is a string in langSuffixMap
 # hashTable is a element in charData. Key is a char, value is a integer.
 def prettyPrint(langName, hashTable):
     if (charTotalData[langName] == 0):
@@ -187,7 +194,7 @@ def prettyPrint(langName, hashTable):
             print(" {}  {:.1%}".format(charr, cnt/float(charTotalData[thisLang]) ))
         print("\n")
 
-#────────── ────────── ────────── ────────── ──────────
+
 # main
 
 # if file_list has element, just count those files. Else, all files in input_dirs
@@ -221,18 +228,18 @@ for thisLang, thisLangCharData in charData.items():
 
 charSumTotal = sum(charTotalData.values())
 
-sortedTotalCharList = sorted(charTotalData.items(), key=operator.itemgetter(1), reverse=True)
-
-######################################
+
+# print
 
 print("\n")
 
 # print overall summery
 print("Total num of files processed: {:,}".format(totalFileCount))
 print("Total num of punc chars counted: {:,}".format(charSumTotal))
-for lname, cnt in sortedTotalCharList:
+sortedLangCharTotal = sorted(charTotalData.items(), key=operator.itemgetter(1), reverse=True)
+for lname, cnt in sortedLangCharTotal:
     print("{:.1%} {} ".format(cnt/float(charSumTotal), lname))
-print("{}\n".format(sortedTotalCharList))
+print("{}\n".format(sortedLangCharTotal))
 
 # print all lang's combined stat
 sortedChars = sorted(charDataCombined.items(), key=operator.itemgetter(1), reverse=True)
@@ -245,4 +252,3 @@ print("\n")
 for thisLang, thisLangCharData in charData.items():
     prettyPrint(thisLang, thisLangCharData)
 
-# (0 if (charTotalData[langName] == 0) else (charTotalData[langName]/float(charSumTotal)) )
