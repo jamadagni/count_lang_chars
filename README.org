@@ -6,9 +6,14 @@ Find the punctuation characters distribution used among computer languages.
 
 This is for designing a optimal keyboard layout for placing symbols.
 
-see
+The primary program is this
+ count-chars.py3
+
+See:
+
+〈Computer Languages Character Distribution〉
+http://xahlee.info/comp/computer_language_char_distribution.html
+
 〈ErgoEmacs Keyboard〉
 http://xahlee.info/comp/ultimate_keyboard_layout.html
 
-The primary program is this
-count-chars.py3

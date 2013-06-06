@@ -27,46 +27,47 @@ file_list = [
 # list of dirs to process. All files in these dir will be counted.
 input_dirs = [
 
-      # python
-    "/usr/lib/python3.2/",
-    "/home/xah/Downloads/lang-source-code/django/",
+#       # python
+#     "/usr/lib/python3.2/",
+#     "/home/xah/Downloads/lang-source-code/django/",
 
-      # perl
-     "/usr/lib/perl5",
-     "/usr/lib/perl/5.14",
-     "/usr/share/perl5",
-     "/usr/share/perl/5.14",
+#       # perl
+#      "/usr/lib/perl5",
+#      "/usr/lib/perl/5.14",
+#      "/usr/share/perl5",
+#      "/usr/share/perl/5.14",
 
-    # #  # ruby
-      "/usr/lib/ruby/1.9.1/",
-      "/home/xah/Downloads/lang-source-code/rails",
+#     # #  # ruby
+#       "/usr/lib/ruby/1.9.1/",
+#       "/home/xah/Downloads/lang-source-code/rails",
 
-      # JavaScript
-#      "/home/xah/Downloads/lang-source-code/yui3", # lang: javascript, total:8,821,561 ;  lang: css, total:104,421; lang: php, total:1,846 ;
-    "/home/xah/Downloads/lang-source-code/angular.js", # javascript, total:842,260
-      "/home/xah/Downloads/lang-source-code/dojo/", # lang: javascript, total:534,967
-      "/home/xah/Downloads/lang-source-code/dijit/", # lang: javascript, total:219,828
-      "/home/xah/Downloads/lang-source-code/prototype", # lang: javascript, total:129,838
-      "/home/xah/Downloads/lang-source-code/backbone", # lang: javascript, total:95,989
-    "/home/xah/Downloads/lang-source-code/jquery-1.9.1/", # lang: javascript, total:39,089
+#       # JavaScript
+# #      "/home/xah/Downloads/lang-source-code/yui3", # lang: javascript, total:8,821,561 ;  lang: css, total:104,421; lang: php, total:1,846 ;
+#     "/home/xah/Downloads/lang-source-code/angular.js", # javascript, total:842,260
+#       "/home/xah/Downloads/lang-source-code/dojo/", # lang: javascript, total:534,967
+#       "/home/xah/Downloads/lang-source-code/dijit/", # lang: javascript, total:219,828
+#       "/home/xah/Downloads/lang-source-code/prototype", # lang: javascript, total:129,838
+#       "/home/xah/Downloads/lang-source-code/backbone", # lang: javascript, total:95,989
+#     "/home/xah/Downloads/lang-source-code/jquery-1.9.1/", # lang: javascript, total:39,089
 
-       # C
-#     "/home/xah/Downloads/lang-source-code/linux", # lang: c, total:72,987,569; lang: python, total:23,045; lang: c++, total:7,892; lang: perl, total:99,459; lang: bash, total:18,060
+#        # C
+# #     "/home/xah/Downloads/lang-source-code/linux", # lang: c, total:72,987,569; lang: python, total:23,045; lang: c++, total:7,892; lang: perl, total:99,459; lang: bash, total:18,060
 
-      "/home/xah/Downloads/lang-source-code/node", # lang: c, total:3,124,259; lang: python, total:405,890; lang: javascript, total:2,121,674; lang: c++, total:5,209,059; lang: perl, total:491,182; lang: bash, total:24,445; lang: ruby, total:380; lang: css, total:5,060
+#       "/home/xah/Downloads/lang-source-code/node", # lang: c, total:3,124,259; lang: python, total:405,890; lang: javascript, total:2,121,674; lang: c++, total:5,209,059; lang: perl, total:491,182; lang: bash, total:24,445; lang: ruby, total:380; lang: css, total:5,060
 
 #      "/home/xah/bin/emacs-24.3/src/", # lang: c, total:1,339,141
+"/home/xah/bin/emacs-24.3/"
 
-      "/home/xah/Downloads/lang-source-code/git", # lang: c, total:822,437; lang: python, total:24,988; lang: javascript, total:8,340; lang: perl, total:216,493; lang: bash, total:559,899; lang: php, total:1,158; lang: css, total:2,307
+      # "/home/xah/Downloads/lang-source-code/git", # lang: c, total:822,437; lang: python, total:24,988; lang: javascript, total:8,340; lang: perl, total:216,493; lang: bash, total:559,899; lang: php, total:1,158; lang: css, total:2,307
 
-       # Java
-      "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only", # lang: java, total:4,106,030; lang: c, total:4,990; lang: python, total:36,669; lang: javascript, total:18,185; lang: c++, total:14,472; lang: bash, total:1,347; lang: css, total:43,472
+      #  # Java
+      # "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only", # lang: java, total:4,106,030; lang: c, total:4,990; lang: python, total:36,669; lang: javascript, total:18,185; lang: c++, total:14,472; lang: bash, total:1,347; lang: css, total:43,472
 
-       # PHP
-      "/home/xah/Downloads/lang-source-code/Symfony", # lang: php, total:1,845,508; lang: c, total:6,069; lang: bash, total:755; lang: css, total:4,352
+      #  # PHP
+      # "/home/xah/Downloads/lang-source-code/Symfony", # lang: php, total:1,845,508; lang: c, total:6,069; lang: bash, total:755; lang: css, total:4,352
 
-       # bash
-      "/home/xah/Downloads/lang-source-code/linux-shell-scripts/"
+      #  # bash
+      # "/home/xah/Downloads/lang-source-code/linux-shell-scripts/"
 
 ]
 
@@ -86,6 +87,7 @@ langSuffixMap = {
 ".js": "javascript",
 ".css": "css",
 ".sh": "bash",
+".el": "elisp",
 #".sql": "sql",
 #".html": "html",
 #".xml": "xml",
