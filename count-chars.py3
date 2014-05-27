@@ -31,39 +31,23 @@ input_dirs = [
      "/usr/lib/python3.2/",
      "/home/xah/Downloads/lang-source-code/django/",
 
-     # perl
-     "/usr/lib/perl5",
-     "/usr/lib/perl/5.14",
-     "/usr/share/perl5",
-     "/usr/share/perl/5.14",
+    # perl
+    "/usr/lib/perl5",
+    "/usr/share/perl5",
+    "/usr/lib/perl/5.14",
+    # "/usr/share/perl/5.14",
 
      # ruby
      "/usr/lib/ruby/1.9.1/",
      "/home/xah/Downloads/lang-source-code/rails",
 
        # JavaScript
-#     lang: javascript, total:8,821,561 ;
-#     lang: css, total:104,421;
-#     lang: php, total:1,846 ;
-     # "/home/xah/Downloads/lang-source-code/yui3",
-
-     # javascript, total:842,260
-     "/home/xah/Downloads/lang-source-code/angular.js",
-
-     # lang: javascript, total:534,967
-     "/home/xah/Downloads/lang-source-code/dojo/",
-
-     # lang: javascript, total:219,828
-     "/home/xah/Downloads/lang-source-code/dijit/",
-
-     # lang: javascript, total:129,838
-     "/home/xah/Downloads/lang-source-code/prototype",
-
-     # lang: javascript, total:95,989
-     "/home/xah/Downloads/lang-source-code/backbone",
-
-     # lang: javascript, total:39,089
-     "/home/xah/Downloads/lang-source-code/jquery-1.9.1/",
+    "/home/xahDownloads/lang-source-code/yui/",
+    "/home/xah/Downloads/lang-source-code/angular",
+    "/home/xah/Downloads/lang-source-code/dojo",
+    "/home/xah/Downloads/lang-source-code/prototype",
+    "/home/xah/Downloads/lang-source-code/backbone",
+    "/home/xah/Downloads/lang-source-code/jquery-1.9.1/",
 
 # #     C
 # #     lang: c, total:72,987,569;
@@ -71,7 +55,7 @@ input_dirs = [
 # #     lang: c++, total:7,892;
 # #     lang: perl, total:99,459;
 # #     lang: bash, total:18,060
-#      "/home/xah/Downloads/lang-source-code/linux",
+#     "/home/xah/Downloads/lang-source-code/linux",
 
 #     lang: c, total:822,437;
 #     lang: python, total:24,988;
@@ -93,7 +77,39 @@ input_dirs = [
 #  lang: bash, total:24,445;
 #  lang: ruby, total:380;
 #  lang: css, total:5,060
-#     "/home/xah/Downloads/lang-source-code/node",
+  # "/home/xah/Downloads/lang-source-code/node",
+
+    # c++
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/accumulators",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/algorithm",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/archive",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/asio",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/assign",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/atomic",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/bimap",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/bind",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/chrono",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/circular_buffer",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/compatibility",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/concept",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/concept_check",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/config",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/container",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/context",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/coroutine",
+"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/date_time",
+ "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/detail",
+ "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/dynamic_bitset",
+ "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/exception",
+ "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/filesystem",
+ "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/flyweight",
+ "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/format",
+ "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/function",
+ "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/functional",
+
+# "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/function_types",
+# "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/fusion",
+# "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/geometry",
 
 #     Java
 #     lang: java, total:4,106,030;
@@ -103,7 +119,13 @@ input_dirs = [
 #     lang: c++, total:14,472;
 #     lang: bash, total:1,347;
 #     lang: css, total:43,472
-     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only",
+     # "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only",
+     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/dev",
+     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/tools",
+     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/build_tools",
+     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/elemental",
+
+    # "/home/xah/Downloads/lang-source-code/gwt",
 
         # PHP
 #       lang: php, total:1,845,508;
@@ -126,6 +148,7 @@ lang_suffix_map = {
 ".rb": "Ruby",
 ".c": "C",
 ".h": "C",
+".hpp": "C++",
 ".cpp": "C++",
 ".cc": "C++",
 ".java": "Java",
