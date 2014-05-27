@@ -14,6 +14,8 @@
 
 # TODO
 # • all file are read in as utf-8. If error, skip. Seems too much trouble to find out file encoding first.
+# • a function to take a dir or file list and with a list of file name extension, and return a hash of the char data.
+# • a function that takes a data hash and add-merge into the main data hash
 
 
 # config
@@ -34,20 +36,27 @@ input_dirs = [
     # perl
     "/usr/lib/perl5",
     "/usr/share/perl5",
-    "/usr/lib/perl/5.14",
+    # "/usr/lib/perl/5.14",
     # "/usr/share/perl/5.14",
 
      # ruby
      "/usr/lib/ruby/1.9.1/",
      "/home/xah/Downloads/lang-source-code/rails",
 
-       # JavaScript
-    "/home/xahDownloads/lang-source-code/yui/",
-    "/home/xah/Downloads/lang-source-code/angular",
+       # JavaScript single files
+    "/home/xah/Downloads/lang-source-code/jquery-1.9.1",
     "/home/xah/Downloads/lang-source-code/dojo",
     "/home/xah/Downloads/lang-source-code/prototype",
     "/home/xah/Downloads/lang-source-code/backbone",
-    "/home/xah/Downloads/lang-source-code/jquery-1.9.1/",
+    "/home/xah/Downloads/lang-source-code/ember",
+    "/home/xah/Downloads/lang-source-code/angular",
+    "/home/xah/Downloads/lang-source-code/d3",
+    "/home/xah/Downloads/lang-source-code/svgjs"
+    "/home/xah/Downloads/lang-source-code/raphael"
+
+       # JavaScript bundles
+    "/home/xah/Downloads/lang-source-code/yui",
+    "/home/xah/Downloads/lang-source-code/Snap.svg-0.2.0",
 
 # #     C
 # #     lang: c, total:72,987,569;
@@ -55,13 +64,14 @@ input_dirs = [
 # #     lang: c++, total:7,892;
 # #     lang: perl, total:99,459;
 # #     lang: bash, total:18,060
-#     "/home/xah/Downloads/lang-source-code/linux",
+    # "/home/xah/Downloads/lang-source-code/linux",
+    "/home/xah/Downloads/lang-source-code/linux/kernel",
 
 #     lang: c, total:822,437;
 #     lang: python, total:24,988;
 #     lang: javascript, total:8,340;
-#     lang: perl, total:216,493;
 #     lang: bash, total:559,899;
+#     lang: perl, total:216,493;
 #     lang: php, total:1,158;
 #     lang: css, total:2,307
      "/home/xah/Downloads/lang-source-code/git",
@@ -77,39 +87,38 @@ input_dirs = [
 #  lang: bash, total:24,445;
 #  lang: ruby, total:380;
 #  lang: css, total:5,060
-  # "/home/xah/Downloads/lang-source-code/node",
+  "/home/xah/Downloads/lang-source-code/node",
 
-    # c++
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/accumulators",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/algorithm",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/archive",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/asio",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/assign",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/atomic",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/bimap",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/bind",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/chrono",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/circular_buffer",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/compatibility",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/concept",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/concept_check",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/config",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/container",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/context",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/coroutine",
-"/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/date_time",
- "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/detail",
- "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/dynamic_bitset",
- "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/exception",
- "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/filesystem",
- "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/flyweight",
- "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/format",
- "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/function",
- "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/functional",
-
-# "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/function_types",
-# "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/fusion",
-# "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/geometry",
+    # # c++
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/accumulators",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/algorithm",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/archive",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/asio",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/assign",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/atomic",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/bimap",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/bind",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/chrono",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/circular_buffer",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/compatibility",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/concept",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/concept_check",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/config",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/container",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/context",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/coroutine",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/date_time",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/detail",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/dynamic_bitset",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/exception",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/filesystem",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/flyweight",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/format",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/function",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/functional",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/function_types",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/fusion",
+    # "/home/xah/Downloads/lang-source-code/boost_1_55_0/boost/geometry",
 
 #     Java
 #     lang: java, total:4,106,030;
@@ -119,11 +128,11 @@ input_dirs = [
 #     lang: c++, total:14,472;
 #     lang: bash, total:1,347;
 #     lang: css, total:43,472
-     # "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only",
-     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/dev",
-     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/tools",
-     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/build_tools",
-     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/elemental",
+     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only",
+     # "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/dev",
+     # "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/tools",
+     # "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/build_tools",
+     # "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only/elemental",
 
     # "/home/xah/Downloads/lang-source-code/gwt",
 
@@ -157,6 +166,7 @@ lang_suffix_map = {
 ".css": "CSS",
 ".sh": "BASH",
 ".el": "Emacs Lisp",
+".tcl": "tcl",
 #".sql": "SQL",
 #".html": "HTML",
 #".xml": "XML",
