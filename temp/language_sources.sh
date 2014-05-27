@@ -38,22 +38,22 @@ svn checkout http://google-web-toolkit.googlecode.com/svn/trunk/ google-web-tool
 # 226M
 git clone https://github.com/yui/yui3.git
 
-# Google web framework
-# 60M
-git clone https://github.com/angular/angular.js.git
+# angular.js Google web framework
+# git clone https://github.com/angular/angular.js.git # 60M
+wget https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js # 493k
 
 # prototype (frontend lib)
 # 13M
 git clone https://github.com/sstephenson/prototype.git
 
 # JQuery (frontend lib)
-# wget http://code.jquery.com/jquery-1.9.1.js
-# 18M
-git clone https://github.com/jquery/jquery.git
+wget http://code.jquery.com/jquery-1.9.1.js # 268k
+#git clone https://github.com/jquery/jquery.git # 18M
+
 
 # backbone (backend lib)
-# 26M
-git clone https://github.com/documentcloud/backbone.git
+wget http://backbonejs.org/backbone.js # 59k
+# git clone https://github.com/documentcloud/backbone.git # 26M
 
 # dojo
 # 23M
