@@ -27,47 +27,93 @@ file_list = [
 # list of dirs to process. All files in these dir will be counted.
 input_dirs = [
 
-    # python
-    "/usr/lib/python3.2/",
-    "/home/xah/Downloads/lang-source-code/django/",
+     # python
+     "/usr/lib/python3.2/",
+     "/home/xah/Downloads/lang-source-code/django/",
 
-    # perl
-    "/usr/lib/perl5",
-    "/usr/lib/perl/5.14",
-    "/usr/share/perl5",
-    "/usr/share/perl/5.14",
+     # perl
+     "/usr/lib/perl5",
+     "/usr/lib/perl/5.14",
+     "/usr/share/perl5",
+     "/usr/share/perl/5.14",
 
-    # ruby
-    "/usr/lib/ruby/1.9.1/",
-    "/home/xah/Downloads/lang-source-code/rails",
+     # ruby
+     "/usr/lib/ruby/1.9.1/",
+     "/home/xah/Downloads/lang-source-code/rails",
 
-#       # JavaScript
-#      # "/home/xah/Downloads/lang-source-code/yui3", # lang: javascript, total:8,821,561 ;  lang: css, total:104,421; lang: php, total:1,846 ;
-#     "/home/xah/Downloads/lang-source-code/angular.js", # javascript, total:842,260
-#       "/home/xah/Downloads/lang-source-code/dojo/", # lang: javascript, total:534,967
-#       "/home/xah/Downloads/lang-source-code/dijit/", # lang: javascript, total:219,828
-#       "/home/xah/Downloads/lang-source-code/prototype", # lang: javascript, total:129,838
-#       "/home/xah/Downloads/lang-source-code/backbone", # lang: javascript, total:95,989
-#     "/home/xah/Downloads/lang-source-code/jquery-1.9.1/", # lang: javascript, total:39,089
+       # JavaScript
+#     lang: javascript, total:8,821,561 ;
+#     lang: css, total:104,421;
+#     lang: php, total:1,846 ;
+     # "/home/xah/Downloads/lang-source-code/yui3",
 
-#     #    # C
-#     # "/home/xah/Downloads/lang-source-code/linux", # lang: c, total:72,987,569; lang: python, total:23,045; lang: c++, total:7,892; lang: perl, total:99,459; lang: bash, total:18,060
+     # javascript, total:842,260
+     "/home/xah/Downloads/lang-source-code/angular.js",
 
-#       "/home/xah/Downloads/lang-source-code/node", # lang: c, total:3,124,259; lang: python, total:405,890; lang: javascript, total:2,121,674; lang: c++, total:5,209,059; lang: perl, total:491,182; lang: bash, total:24,445; lang: ruby, total:380; lang: css, total:5,060
+     # lang: javascript, total:534,967
+     "/home/xah/Downloads/lang-source-code/dojo/",
 
-# # #      "/home/xah/bin/emacs-24.3/src/", # lang: c, total:1,339,141
-# # "/home/xah/bin/emacs-24.3/"
+     # lang: javascript, total:219,828
+     "/home/xah/Downloads/lang-source-code/dijit/",
 
-#       "/home/xah/Downloads/lang-source-code/git", # lang: c, total:822,437; lang: python, total:24,988; lang: javascript, total:8,340; lang: perl, total:216,493; lang: bash, total:559,899; lang: php, total:1,158; lang: css, total:2,307
+     # lang: javascript, total:129,838
+     "/home/xah/Downloads/lang-source-code/prototype",
 
-#        # Java
-#       "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only", # lang: java, total:4,106,030; lang: c, total:4,990; lang: python, total:36,669; lang: javascript, total:18,185; lang: c++, total:14,472; lang: bash, total:1,347; lang: css, total:43,472
+     # lang: javascript, total:95,989
+     "/home/xah/Downloads/lang-source-code/backbone",
 
-#        # PHP
-#       "/home/xah/Downloads/lang-source-code/Symfony", # lang: php, total:1,845,508; lang: c, total:6,069; lang: bash, total:755; lang: css, total:4,352
+     # lang: javascript, total:39,089
+     "/home/xah/Downloads/lang-source-code/jquery-1.9.1/",
 
-#        # bash
-#       "/home/xah/Downloads/lang-source-code/linux-shell-scripts/"
+# #     C
+# #     lang: c, total:72,987,569;
+# #     lang: python, total:23,045;
+# #     lang: c++, total:7,892;
+# #     lang: perl, total:99,459;
+# #     lang: bash, total:18,060
+#      "/home/xah/Downloads/lang-source-code/linux",
+
+#     lang: c, total:822,437;
+#     lang: python, total:24,988;
+#     lang: javascript, total:8,340;
+#     lang: perl, total:216,493;
+#     lang: bash, total:559,899;
+#     lang: php, total:1,158;
+#     lang: css, total:2,307
+     "/home/xah/Downloads/lang-source-code/git",
+
+# lang: c, total:1,339,141
+     "/home/xah/apps/emacs-24.3/src/",
+
+#  lang: c++, total:5,209,059;
+#  lang: c, total:3,124,259;
+#  lang: python, total:405,890;
+#  lang: javascript, total:2,121,674;
+#  lang: perl, total:491,182;
+#  lang: bash, total:24,445;
+#  lang: ruby, total:380;
+#  lang: css, total:5,060
+#     "/home/xah/Downloads/lang-source-code/node",
+
+#     Java
+#     lang: java, total:4,106,030;
+#     lang: c, total:4,990;
+#     lang: python, total:36,669;
+#     lang: javascript, total:18,185;
+#     lang: c++, total:14,472;
+#     lang: bash, total:1,347;
+#     lang: css, total:43,472
+     "/home/xah/Downloads/lang-source-code/google-web-toolkit-read-only",
+
+        # PHP
+#       lang: php, total:1,845,508;
+#       lang: c, total:6,069;
+#       lang: bash, total:755;
+#       lang: css, total:4,352
+       "/home/xah/Downloads/lang-source-code/Symfony",
+
+        # bash
+       "/home/xah/Downloads/lang-source-code/linux-shell-scripts/",
 
 ]
 
@@ -101,6 +147,7 @@ import datetime
 import operator
 import re
 import json
+import pprint
 
 
 
@@ -181,7 +228,7 @@ num_of_file_processed = 0
 
 def count_this_file(fpath):
     "add char count to char_data"
-#    print("reading:{}".format(fpath))
+    # print("reading:{}".format(fpath))
 
     inputFile = open(fpath)
     fileContent = ""
@@ -203,7 +250,7 @@ def count_this_file(fpath):
 
 # langName is a string in lang_suffix_map
 # hashTable is a element in char_data. Key is a char, value is a integer.
-def prettyPrint(langName, hashTable):
+def pretty_print(langName, hashTable):
     if (all_langs_char_count[langName] == 0):
         pass
     else:
@@ -282,6 +329,6 @@ print("\n")
 
 # print each lang's stat
 for thisLang, thisLangCharData in char_data.items():
-    prettyPrint(thisLang, thisLangCharData)
+    pretty_print(thisLang, thisLangCharData)
 
 print(json.dumps (char_data))

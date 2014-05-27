@@ -97,6 +97,9 @@ git clone https://github.com/rails/rails.git
 # 41M
 # http://symfony.com/
 
+# Wikipedia wikimedia 
+git clone https://github.com/wikimedia/mediawiki-core.git
+
 # ────────── ────────── ────────── ────────── ──────────
 # shell scripts
 
