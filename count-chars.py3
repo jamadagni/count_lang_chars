@@ -13,7 +13,7 @@
 # created date: 2013-05-23
 
 # TODO
-# • all file are read in as utf-8. If error, skip. Seems too much trouble to find out file encoding first.
+# • all files are read in as utf-8. If error, skip. Seems too much trouble to find out file encoding first.
 # • a function to take a dir or file list and with a list of file name extension, and return a hash of the char data.
 # • a function that takes a data hash and add-merge into the main data hash
 
@@ -146,6 +146,11 @@ input_dirs = [
         # bash
        "/home/xah/Downloads/lang-source-code/linux-shell-scripts/",
 
+        # Haskell
+       "/home/xah/Downloads/lang-source-code/ghc",
+       "/home/xah/Downloads/lang-source-code/cabal",
+       "/home/xah/Downloads/lang-source-code/bytestring",
+
 ]
 
 # only files with these extensions are counted
@@ -170,6 +175,8 @@ lang_suffix_map = {
 #".sql": "SQL",
 #".html": "HTML",
 #".xml": "XML",
+".hs": "Haskell",
+".lhs": "Haskell",
 }
 
 
